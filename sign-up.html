@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Web App - Putra FR</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- registration form -->
+    <div class="login_form">
+      <form class="form" id="form" onsubmit="submitForm(event)">
+        <div class="title">Register</div>
+        <span class="inputs">
+          <span class="inputf">
+            <input
+              type="text"
+              class="input"
+              id="sName"
+              placeholder="isi nama lengkap"
+            />
+            <span class="label">Nama Lengkap</span>
+          </span>
+          <span class="inputf">
+            <input
+              type="text"
+              class="input"
+              id="sRoll"
+              placeholder="isi nomor kuis"
+            />
+            <span class="label">Nomor Kuis</span>
+          </span>
+          <span class="inputf">
+            <input
+              type="email"
+              class="input"
+              id="sEmail"
+              placeholder="isi email anda"
+            />
+            <span class="label">Email</span>
+          </span>
+          <span class="inputf">
+            <input
+              type="password"
+              class="input"
+              id="sPass"
+              placeholder="isi password anda"
+            />
+            <span class="label">Password</span>
+          </span>
+        </span>
+        <p style="font-size: 11px; color: #666; margin-top: 10px; text-align: center;">
+        *Gunakan email & password sembarang, tapi pastikan Anda mengingatnya.
+        </p>
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

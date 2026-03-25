@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Web App - Putra FR</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- login form -->
+    <div class="login_form">
+      <div class="form">
+        <div style="background: #e1f5fe; padding: 10px; border-radius: 5px; margin-bottom: 20px; border-left: 5px solid #0097a7;">
+      <p style="font-size: 12px; color: #0277bd; line-height: 1.4;">
+        <strong>📌 Catatan Penting:</strong><br>
+        Web ini <b>tidak menyimpan</b> data pribadi Anda ke server. Data hanya tersimpan sementara di browser ini.<br><br>
+        Pada bagian registrasi, Anda bebas mengisi data (Contoh: <i>kenzo@gmail.com</i> atau <i>riski@gmail.com</i>). 
+        Gunakan angka bebas untuk nomor kuis dan <b>ingat password</b> yang Anda buat untuk login.
+      </p>
+    </div>
+        <div class="title">Login</div>
+        <span class="inputs">
+          <span class="inputf">
+            <input
+              type="email"
+              class="input"
+              id="uEmail"
+              placeholder="isi email"
+            />
+            <span class="label">Email</span>
+          </span>
+          <span class="inputf">
+            <input
+              type="password"
+              class="input"
+              id="uPass"
+              placeholder="isi password"
+            />
+            <span class="label">Password</span>
+          </span>
+        </span>
+        <div class="hideBtn">
+          <button type="button" class="btn" onclick="loginForm()">Login</button>
+          <div class="text">
+            Tidak memiliki akun ? Buat akun
+            <a href="sign-up.html">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- info box quiz -->
+    <div class="info_box">
+      <div class="info-title"><span>Aturan dalam quiz ini</span></div>
+      <div class="info-list">
+        <div class="info">
+          <span>1.</span> Anda hanya memiliki 15 detik untuk setiap pertanyaan
+        </div>
+        <div class="info">
+          <span>2.</span> Anda tidak dapat memilih opsi apapun setelah waktu
+          habis.
+        </div>
+        <div class="info">
+          <span>3.</span> Setelah kuis dimulai, Anda tidak dapat meminimalkan
+          layar atau membuka halaman lain.
+        </div>
+        <div class="info">
+          <span>4.</span> Jika Anda melanggar <span>poin 3</span>, itu akan
+          dianggap melanggar aturan (diskualifikasi).
+        </div>
+        <div class="info">
+          <span>5.</span> Jika dua pelanggaran dihitung, Anda akan dikeluarkan.
+        </div>
+        <div class="info">
+          <span>6.</span> Anda tidak dapat keluar dari kuis selama Anda sedang
+          bermain.
+        </div>
+        <div class="info">
+          <span>7.</span> Anda akan mendapatkan poin berdasarkan jawaban yang
+          benar.
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="quit" onclick="quit()">Keluar Kuis</button>
+        <button class="restart" onclick="enterQuiz()">Selanjutnya</button>
+      </div>
+    </div>
+
+    <!-- start quiz button -->
+    <div class="startBtn">
+      <button onclick="startQuiz()">Mulai Kuis</button>
+    </div>
+
+    <!-- Tampilkan quiz soal -->
+    <div class="quiz_container">
+      <!-- header quiz -->
+      <header>
+        <div class="quiz_title">
+          <p>Kuis</p>
+        </div>
+        <div class="count_down">
+          <p>Waktu Sisa</p>
+          <p id="timer">00</p>
+        </div>
+      </header>
+
+      <!-- main quiz content -->
+      <main id="quizHidden">
+        <div id="qustionsContainer"></div>
+      </main>
+
+      <!-- button pertanyaan selanjutnya -->
+      <footer>
+        <div class="footer_container">
+          <div class="qustion_Count">
+            <span id="qustionNo">1</span>
+            <p>dari</p>
+            <span>5</span>
+            <p>Pertanyaan</p>
+          </div>
+          <div class="next_Btn">
+            <button onclick="renderQuestions()">Selanjutnya</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- result box -->
+    <div class="result_box">
+      <div class="complete_text">Kamu telah berhasil menyelesaikan kuiz</div>
+      <div class="circular-progress">
+        <span class="progress-value">0%</span>
+      </div>
+      <div class="score_text"></div>
+      <div class="buttons">
+        <button class="quit" onclick="quit()">Keluar</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
